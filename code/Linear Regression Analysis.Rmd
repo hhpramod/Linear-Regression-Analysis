@@ -3,10 +3,10 @@ title: "Linear Regression Analysis"
 author: "Pramod Nipunajith"
 date: "2022-11-07"
 output:
-  pdf_document: default
   html_document:
     df_print: paged
   word_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -465,6 +465,7 @@ summary(fit_model)
 ```
 
 ## Check the model assumption
+
 ```{r}
 check_model(fit_model, check = c("qq", "linearity", "homogeneity", "outliers"))
 ```

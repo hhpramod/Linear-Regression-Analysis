@@ -9,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="S/17/436" />
+<meta name="author" content="Pramod Nipunajith" />
 
 <meta name="date" content="2022-11-07" />
 
-<title>ST-301_Assignment_01</title>
+<title>Linear Regression Analysis</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1621,8 +1621,8 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">ST-301_Assignment_01</h1>
-<h4 class="author">S/17/436</h4>
+<h1 class="title toc-ignore">Linear Regression Analysis</h1>
+<h4 class="author">Pramod Nipunajith</h4>
 <h4 class="date">2022-11-07</h4>
 
 </div>
@@ -1669,6 +1669,7 @@ library(sp)</code></pre>
 <div id="import-the-data-set" class="section level1">
 <h1>Import the data set</h1>
 <pre class="r"><code>insurance_claims &lt;- read.csv(&quot;../data/insurance_claims.csv&quot;)
+
 attach(insurance_claims)
 head(insurance_claims)</code></pre>
 <div data-pagedtable="false">
@@ -2116,7 +2117,7 @@ level. Moreover, we can conclude that the reduced model is adequate.</p>
 ## - Based on the following method and threshold: cook (0.9).
 ## - For variable: (Whole model)</code></pre>
 <pre class="r"><code>check_autocorrelation(red_model)</code></pre>
-<pre><code>## OK: Residuals appear to be independent and not autocorrelated (p = 0.970).</code></pre>
+<pre><code>## OK: Residuals appear to be independent and not autocorrelated (p = 0.964).</code></pre>
 <p>By looking at the above plot and results that we obtained, we can
 detect that the normality of residuals and heteroskedasticity is
 violated. So, we have to use the transformation method to correct those
@@ -2167,7 +2168,7 @@ summary(fit_model)</code></pre>
 ## - Based on the following method and threshold: cook (0.9).
 ## - For variable: (Whole model)</code></pre>
 <pre class="r"><code>check_autocorrelation(fit_model)</code></pre>
-<pre><code>## OK: Residuals appear to be independent and not autocorrelated (p = 0.256).</code></pre>
+<pre><code>## OK: Residuals appear to be independent and not autocorrelated (p = 0.294).</code></pre>
 <p>In order to correct the non constant error of variance, we can use
 log transformation.</p>
 </div>
@@ -2212,7 +2213,7 @@ summary(log_model)</code></pre>
 ## - Based on the following method and threshold: cook (0.9).
 ## - For variable: (Whole model)</code></pre>
 <pre class="r"><code>check_autocorrelation(log_model)</code></pre>
-<pre><code>## OK: Residuals appear to be independent and not autocorrelated (p = 0.522).</code></pre>
+<pre><code>## OK: Residuals appear to be independent and not autocorrelated (p = 0.470).</code></pre>
 <p>Still normality assumption is violated.</p>
 </div>
 </div>
